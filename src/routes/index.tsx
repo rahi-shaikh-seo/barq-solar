@@ -697,18 +697,31 @@ function Index() {
         </div>
       </footer>
 
-      {/* Sticky Call Now Button */}
-      <a
-        href={`tel:${PHONE_1}`}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold shadow-lg transition-all duration-300 hover:scale-105 active:scale-95"
-        style={{
-          background: "var(--gradient-leaf)",
-          color: "var(--primary-foreground)",
-          boxShadow: "0 8px 25px -5px color-mix(in oklab, var(--primary) 40%, transparent)",
-        }}
-      >
-        <IconPhone /> Call Now
-      </a>
+      {/* Sticky Action Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a
+          href={`https://wa.me/91${PHONE_1}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 active:scale-95"
+          style={{
+            boxShadow: "0 8px 25px -5px rgba(37, 211, 102, 0.4)",
+          }}
+        >
+          <IconWhatsApp /> WhatsApp
+        </a>
+        <a
+          href={`tel:${PHONE_1}`}
+          className="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold shadow-lg transition-all duration-300 hover:scale-105 active:scale-95"
+          style={{
+            background: "var(--gradient-leaf)",
+            color: "var(--primary-foreground)",
+            boxShadow: "0 8px 25px -5px color-mix(in oklab, var(--primary) 40%, transparent)",
+          }}
+        >
+          <IconPhone /> {t.callBtn}
+        </a>
+      </div>
     </div>
   );
 }
@@ -769,4 +782,11 @@ function IconMenu() {
 }
 function IconX() {
   return <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}><path d="M18 6 6 18M6 6l12 12" /></svg>;
+}
+function IconWhatsApp() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" {...stroke}>
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+  );
 }
